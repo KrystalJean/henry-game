@@ -35,7 +35,7 @@ const sound15 = document.getElementById('sound-15');
 const sound16 = document.getElementById('sound-16');
 
 //individual sound clip files
-const clip1 = newAudio('./audio/beep.mp3');
+const clip1 = ('./audio/beep.mp3');
 const clip2 = './audio/cow.mp3';
 const clip3 = './audio/doorbell.mp3';
 const clip4 = './audio/glass.mp3';
@@ -55,7 +55,7 @@ const clip16 = './audio/cow.mp3';
 const randomNumberArray = [];
 const buttonPad = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
 const sounds = [sound1, sound2, sound3, sound4,  sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,  sound13, sound14, sound15, sound16];
-
+const buttons = document.querySelectorAll('.guess-btn');
 
 const n = 16; //number of guess buttons, anf length of random numbers array
 function setNewGame() {
@@ -73,52 +73,52 @@ function setNewGame() {
 
         if (randomNumberArray[i] === 1) {
             sounds[i].src = clip1;
-            console.log("a");
+            console.log(clip1);
         } else if (randomNumberArray[i] === 2) {
             sounds[i].src = clip2;
-            console.log("b");
+            console.log(clip2);
         } else if (randomNumberArray[i] === 3) {
             sounds[i].src = clip3;
-            console.log("d");
+            console.log(clip3);
         } else if (randomNumberArray[i] === 4) {
             sounds[i].src = clip4;
-            console.log("e");
+            console.log(clip4);
         } else if (randomNumberArray[i] === 5) {
             sounds[i].src = clip5;
-            console.log("f");
+            console.log(clip5);
         } else if (randomNumberArray[i] === 6) {
             sounds[i].src = clip6;
-            console.log("g");
+            console.log(clip6);
         } else if (randomNumberArray[i] === 7) {
             sounds[i].src = clip7;
-            console.log("h");
+            console.log(clip7);
         } else if (randomNumberArray[i] === 8) {
             sounds[i].src = clip8;
-            console.log("i");
+            console.log(clip8);
         } else if (randomNumberArray[i] === 9) {
             sounds[i].src = clip9;
-            console.log("j");
+            console.log(clip9);
         } else if (randomNumberArray[i] === 10) {
             sounds[i].src = clip10;
-            console.log("k");
+            console.log(clip10);
         } else if (randomNumberArray[i] === 11) {
             sounds[i].src = clip10;
-            console.log("l");
+            console.log(clip11);
         } else if (randomNumberArray[i] === 12) {
             sounds[i].src = clip12;
-            console.log("m");
+            console.log(clip12);
         } else if (randomNumberArray[i] === 13) {
             sounds[i].src = clip13;
-            console.log("n");
+            console.log(clip13);
         } else if (randomNumberArray[i] === 14) {
             sounds[i].src = clip14;
-            console.log("o");
+            console.log(clip14);
         } else if (randomNumberArray[i] === 15) {
             sounds[i].src = clip15;
-            console.log("p");
+            console.log(clip15);
         } else if (randomNumberArray[i] === 16) {
             sounds[i].src = clip16;
-            console.log("q");
+            console.log(clip16);
         } else {
             console.log("none");
         }
@@ -129,7 +129,64 @@ function setNewGame() {
 
 setNewGame();
 
-
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        switch(button) {
+            case btn1:
+               sound1.play();
+               break; 
+            case btn2:
+                sound2.play();
+                break;
+            case btn3:
+                sound3.play();
+                break;
+            case btn4:
+                sound4.play();
+                break;
+            case btn5:
+                sound5.play();
+                break;
+            case btn6:
+                sound6.play();
+                break;
+            case btn7:
+                sound7.play();
+                break;
+            case btn8:
+                sound8.play();
+                break;
+            case btn9:
+                sound2.play();
+                break;
+            case btn10:
+                sound2.play();
+                break;
+            case btn11:
+                sound11.play();
+                break;
+            case btn12:
+                sound12.play();
+                break;
+            case btn13:
+                sound13.play();
+                break;
+            case btn14:
+                sound14.play();
+                break;
+            case btn15:
+                sound15.play();
+                break;
+            case btn16:
+                sound16.play();
+                break;
+            default:
+                console.log('invalid');
+                break;
+        }
+      
+    });
+  });
 
 // const obj1 = Object.assign({}, randomNumberArray);
 // console.log(obj1);
