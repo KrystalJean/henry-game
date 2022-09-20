@@ -52,7 +52,7 @@ body {
 }
 
 
-.start-new-game {
+#start-new-game {
     padding: 15px;
     margin-top: 50px;
 }

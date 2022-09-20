@@ -52,14 +52,17 @@ const clip14 = './audio/window.mp3';
 const clip15 = './audio/cow.mp3';
 const clip16 = './audio/cow.mp3';
 
-const randomNumberArray = [];
+let randomNumberArray = [];
 const buttonPad = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
-const sounds = [sound1, sound2, sound3, sound4,  sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,  sound13, sound14, sound15, sound16];
+const sounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12, sound13, sound14, sound15, sound16];
 const buttons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
+const startBtn = document.getElementById('start-new-game');
+
+
 
 const n = 16; //number of guess buttons, anf length of random numbers array
-function setNewGame() {
+function getRandomNumberArray() {
     do {
         const randomNumber = Math.floor(Math.random() * n) + 1
 
@@ -68,8 +71,15 @@ function setNewGame() {
         }
 
     } while (randomNumberArray.length < n);
+}
 
+function setHenryButton() {
+    henryBtn.addEventListener("click", () => {
+        sound1.play();
+    });
+}
 
+function setButtonPad() {
     for (let i = 0; i < n; i++) {
 
         if (randomNumberArray[i] === 1) {
@@ -123,27 +133,33 @@ function setNewGame() {
         } else {
             console.log("none");
         }
-
-       
     }
 }
 
-setNewGame();
+function startNewGame() {
+    randomNumberArray = [];
+    getRandomNumberArray();
+    setButtonPad();
+    setHenryButton();
 
-function henry() {
-    henryBtn.addEventListener("click", () => {
-        sound1.play();
-    });
+    const demo = document.getElementById('demo');
+    demo.innerHTML = randomNumberArray;
+
 }
 
-henry();
+startNewGame();
 
+startBtn.addEventListener("click", () => {
+    startNewGame();
+});
+
+//button pad event listeners
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        switch(button) {
+        switch (button) {
             case btn1:
-               sound1.play();
-               break; 
+                sound1.play();
+                break;
             case btn2:
                 sound2.play();
                 break;
@@ -193,15 +209,7 @@ buttons.forEach(button => {
                 console.log('invalid');
                 break;
         }
-      
+
     });
-  });
-
-// const obj1 = Object.assign({}, randomNumberArray);
-// console.log(obj1);
-
-
-const demo = document.getElementById('demo');
-demo.innerHTML = randomNumberArray;
-console.log(sounds[1].src);
+});
 
