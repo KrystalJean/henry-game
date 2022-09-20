@@ -14,3 +14,44 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
+.game-console {
+    background-color: blue;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.random-sound-btn {
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.button-pad {
+    background-color: mediumblue;
+    border: solid darkblue 6px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 20px;
+    padding: 20px;
+    
+}
+
+.guess-btn {
+    background-color: orange;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.start-new-game {
+    padding: 15px;
+    margin-top: 50px;
+}
