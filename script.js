@@ -56,6 +56,7 @@ const randomNumberArray = [];
 const buttonPad = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
 const sounds = [sound1, sound2, sound3, sound4,  sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12,  sound13, sound14, sound15, sound16];
 const buttons = document.querySelectorAll('.guess-btn');
+const henryBtn = document.getElementById('henry-btn');
 
 const n = 16; //number of guess buttons, anf length of random numbers array
 function setNewGame() {
@@ -128,6 +129,14 @@ function setNewGame() {
 }
 
 setNewGame();
+
+function henry() {
+    henryBtn.addEventListener("click", () => {
+        sound1.play();
+    });
+}
+
+henry();
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
