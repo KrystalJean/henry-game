@@ -53,18 +53,19 @@ const clip15 = './audio/cow.mp3';
 const clip16 = './audio/cow.mp3';
 
 let randomNumberArray = [];
+let henrySoundsArray = [];
 const buttonPad = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
 const sounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12, sound13, sound14, sound15, sound16];
 const buttons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-new-game');
+const henrySound = document.getElementById('henry-sound');
 
 
-
-const n = 16; //number of guess buttons, anf length of random numbers array
+const n = 16; //number of guess buttons, and length of random numbers array
 function getRandomNumberArray() {
     do {
-        const randomNumber = Math.floor(Math.random() * n) + 1
+        const randomNumber = Math.floor(Math.random() * n) + 1;
 
         if (!randomNumberArray.includes(randomNumber)) {
             randomNumberArray.push(randomNumber);
@@ -73,81 +74,139 @@ function getRandomNumberArray() {
     } while (randomNumberArray.length < n);
 }
 
+
+function getHenrySoundArray() {
+    do {
+        const randomNumber = Math.floor(Math.random() * n) + 1;
+
+        if (!henrySoundsArray.includes(randomNumber)) {
+            henrySoundsArray.push(randomNumber);
+        }
+
+    } while (henrySoundsArray.length < n);
+}
+
+
 function setHenryButton() {
-    henryBtn.addEventListener("click", () => {
-        sound1.play();
-    });
+
+    for (let i = 0; i < n; i++) {
+
+        if (henrySoundsArray[i] === 1) {
+            henrySound.src = clip1;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 2) {
+            henrySound.src = clip2;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 3) {
+            henrySound.src = clip3;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 4) {
+            henrySound.src = clip4;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 5) {
+            henrySound.src = clip5;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 6) {
+            henrySound.src = clip6;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 7) {
+            henrySound.src = clip7;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 8) {
+            henrySound.src = clip8;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 9) {
+            henrySound.src = clip9;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 10) {
+            henrySound.src = clip10;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 11) {
+            henrySound.src = clip11;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 12) {
+            henrySound.src = clip12;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 13) {
+            henrySound.src = clip13;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 14) {
+            henrySound.src = clip14;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 15) {
+            henrySound.src = clip15;
+            // console.log(henrySound.src);
+        } else if (henrySoundsArray[i] === 16) {
+            henrySound.src = clip16;
+            // console.log(henrySound.src);
+        } else {
+            // console.log("none");
+        }
+    }
+
+
 }
 
 function setButtonPad() {
     for (let i = 0; i < n; i++) {
-
         if (randomNumberArray[i] === 1) {
             sounds[i].src = clip1;
-            console.log(clip1);
         } else if (randomNumberArray[i] === 2) {
             sounds[i].src = clip2;
-            console.log(clip2);
         } else if (randomNumberArray[i] === 3) {
             sounds[i].src = clip3;
-            console.log(clip3);
         } else if (randomNumberArray[i] === 4) {
             sounds[i].src = clip4;
-            console.log(clip4);
         } else if (randomNumberArray[i] === 5) {
             sounds[i].src = clip5;
-            console.log(clip5);
         } else if (randomNumberArray[i] === 6) {
             sounds[i].src = clip6;
-            console.log(clip6);
         } else if (randomNumberArray[i] === 7) {
             sounds[i].src = clip7;
-            console.log(clip7);
         } else if (randomNumberArray[i] === 8) {
             sounds[i].src = clip8;
-            console.log(clip8);
         } else if (randomNumberArray[i] === 9) {
             sounds[i].src = clip9;
-            console.log(clip9);
         } else if (randomNumberArray[i] === 10) {
             sounds[i].src = clip10;
-            console.log(clip10);
         } else if (randomNumberArray[i] === 11) {
-            sounds[i].src = clip10;
-            console.log(clip11);
+            sounds[i].src = clip11;
         } else if (randomNumberArray[i] === 12) {
             sounds[i].src = clip12;
-            console.log(clip12);
         } else if (randomNumberArray[i] === 13) {
             sounds[i].src = clip13;
-            console.log(clip13);
         } else if (randomNumberArray[i] === 14) {
             sounds[i].src = clip14;
-            console.log(clip14);
         } else if (randomNumberArray[i] === 15) {
             sounds[i].src = clip15;
-            console.log(clip15);
         } else if (randomNumberArray[i] === 16) {
             sounds[i].src = clip16;
-            console.log(clip16);
         } else {
-            console.log("none");
+            // console.log("none");
         }
     }
 }
 
 function startNewGame() {
     randomNumberArray = [];
+    henrySoundsArray = []
     getRandomNumberArray();
-    setButtonPad();
+    getHenrySoundArray()
     setHenryButton();
+    setButtonPad();
 
     const demo = document.getElementById('demo');
+    const playersTurn = document.getElementById('player-indicator');
     demo.innerHTML = randomNumberArray;
+    playersTurn.innerHTML = "Player 1's Turn";
 
 }
 
 startNewGame();
+
+henryBtn.addEventListener("click", () => {
+    henrySound.play();
+});
 
 startBtn.addEventListener("click", () => {
     startNewGame();
@@ -159,7 +218,18 @@ buttons.forEach(button => {
         switch (button) {
             case btn1:
                 sound1.play();
+
+                console.log('starttttttttttttt');
+                console.log(sound1.src);
+                console.log(henrySound.src);
+                if (sound1.src === henrySound.src) {
+                    console.log('correct');
+                    setHenryButton()
+                } else {
+                    console.log('incorrect');
+                }
                 break;
+                
             case btn2:
                 sound2.play();
                 break;
@@ -182,10 +252,10 @@ buttons.forEach(button => {
                 sound8.play();
                 break;
             case btn9:
-                sound2.play();
+                sound9.play();
                 break;
             case btn10:
-                sound2.play();
+                sound10.play();
                 break;
             case btn11:
                 sound11.play();
@@ -206,10 +276,24 @@ buttons.forEach(button => {
                 sound16.play();
                 break;
             default:
-                console.log('invalid');
+                // console.log('invalid');
                 break;
         }
 
     });
 });
 
+// function lightUpButton() {
+//     if(he)
+// }
+
+
+// const player1 = x;
+// const player2 = y;
+// const computer = z;
+
+
+console.log(randomNumberArray);
+console.log(henrySoundsArray);
+// console.log(sound1.src);
+// console.log(henrySound.src);
