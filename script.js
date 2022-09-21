@@ -35,7 +35,7 @@ const sound15 = document.getElementById('sound-15');
 const sound16 = document.getElementById('sound-16');
 
 //individual sound clip files
-const clip1 = ('./audio/beep.mp3');
+const clip1 = './audio/beep.mp3';
 const clip2 = './audio/cow.mp3';
 const clip3 = './audio/doorbell.mp3';
 const clip4 = './audio/glass.mp3';
@@ -49,18 +49,20 @@ const clip11 = './audio/punch.mp3';
 const clip12 = './audio/rooster.mp3';
 const clip13 = './audio/tada.mp3';
 const clip14 = './audio/window.mp3';
-const clip15 = './audio/cow.mp3';
-const clip16 = './audio/cow.mp3';
+const clip15 = './audio/dog.mp3';
+const clip16 = './audio/pig.mp3';
 
 let randomNumberArray = [];
 let henrySoundsArray = [];
+let henryIncrementor = 1;
 const clipArray = [clip1, clip2, clip3, clip4, clip5, clip6, clip7, clip8, clip9, clip10, clip11, clip12, clip13, clip14, clip15, clip16];
 const buttonPadArray = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
 const soundsArray = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12, sound13, sound14, sound15, sound16];
 const buttons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-new-game');
-const henrySound = document.getElementById('henry-sound');
+let henrySound = document.getElementById('henry-sound');
+const playersTurn = document.getElementById('player-indicator');
 
 
 
@@ -74,76 +76,6 @@ function getRandomNumberArray() {
         }
 
     } while (randomNumberArray.length < n);
-}
-
-function getHenrySoundArray() {
-    do {
-        const randomNumber = Math.floor(Math.random() * n) + 1;
-
-        if (!henrySoundsArray.includes(randomNumber)) {
-            henrySoundsArray.push(randomNumber);
-        }
-
-    } while (henrySoundsArray.length < n);
-}
-
-
-function setHenryButton() {
-
-    for (let i = 0; i < n; i++) {
-
-        if (henrySoundsArray[i] === 1) {
-            henrySound.src = clip1;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 2) {
-            henrySound.src = clip2;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 3) {
-            henrySound.src = clip3;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 4) {
-            henrySound.src = clip4;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 5) {
-            henrySound.src = clip5;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 6) {
-            henrySound.src = clip6;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 7) {
-            henrySound.src = clip7;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 8) {
-            henrySound.src = clip8;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 9) {
-            henrySound.src = clip9;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 10) {
-            henrySound.src = clip10;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 11) {
-            henrySound.src = clip11;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 12) {
-            henrySound.src = clip12;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 13) {
-            henrySound.src = clip13;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 14) {
-            henrySound.src = clip14;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 15) {
-            henrySound.src = clip15;
-            // console.log(henrySound.src);
-        } else if (henrySoundsArray[i] === 16) {
-            henrySound.src = clip16;
-            // console.log(henrySound.src);
-        } else {
-            console.log("none");
-        }
-    }
 }
 
 function setButtonPad() {
@@ -186,31 +118,117 @@ function setButtonPad() {
     }
 }
 
+function getHenrySoundArray() {
+    do {
+        const randomNumber = Math.floor(Math.random() * n) + 1;
+
+        if (!henrySoundsArray.includes(randomNumber)) {
+            henrySoundsArray.push(randomNumber);
+        }
+
+    } while (henrySoundsArray.length < n);
+}
+
+function setHenryButton() {
+
+    for (let i = 0; i < n; i++) {
+
+        if (henrySoundsArray[i] === 1) {
+            henrySoundsArray[i] = clip1;
+            
+        } else if (henrySoundsArray[i] === 2) {
+            henrySoundsArray[i] = clip2;
+            
+        } else if (henrySoundsArray[i] === 3) {
+            henrySoundsArray[i] = clip3;
+            
+        } else if (henrySoundsArray[i] === 4) {
+            henrySoundsArray[i] = clip4;
+            
+        } else if (henrySoundsArray[i] === 5) {
+            henrySoundsArray[i] = clip5;
+            
+        } else if (henrySoundsArray[i] === 6) {
+            henrySoundsArray[i] = clip6;
+            
+        } else if (henrySoundsArray[i] === 7) {
+            henrySoundsArray[i] = clip7;
+            
+        } else if (henrySoundsArray[i] === 8) {
+            henrySoundsArray[i] = clip8;
+            
+        } else if (henrySoundsArray[i] === 9) {
+            henrySoundsArray[i] = clip9;
+            
+        } else if (henrySoundsArray[i] === 10) {
+            henrySoundsArray[i] = clip10;
+            
+        } else if (henrySoundsArray[i] === 11) {
+            henrySoundsArray[i] = clip11;
+            
+        } else if (henrySoundsArray[i] === 12) {
+            henrySoundsArray[i] = clip12;
+            
+        } else if (henrySoundsArray[i] === 13) {
+            henrySoundsArray[i] = clip13;
+            
+        } else if (henrySoundsArray[i] === 14) {
+            henrySoundsArray[i] = clip14;
+            
+        } else if (henrySoundsArray[i] === 15) {
+            henrySoundsArray[i] = clip15;
+            
+        } else if (henrySoundsArray[i] === 16) {
+            henrySoundsArray[i] = clip16;
+            
+        } else {
+            console.log("none");
+        }
+
+    }
+
+    henrySound.src = henrySoundsArray[0];
+
+}
+
 function startNewGame() {
     randomNumberArray = [];
-    henrySoundsArray = []
+    henrySoundsArray = [];
+    henryIncrementor = 1;
 
     getRandomNumberArray();
+    setButtonPad();
     getHenrySoundArray();
     setHenryButton();
-    setButtonPad();
 
+    buttons.forEach(button => {
+        button.style.backgroundColor = 'orange';
+        button.disabled = true;
+    });
 
-    const demo = document.getElementById('demo');
-    const playersTurn = document.getElementById('player-indicator');
-    demo.innerHTML = randomNumberArray;
-    playersTurn.innerHTML = "Player 1's Turn";
+    playersTurn.innerHTML = `Player 1's Turn`;
 
 }
 
 startNewGame();
 
+////////////////////////////////////////////////////////////////////////////
+
+
 henryBtn.addEventListener("click", () => {
     henrySound.play();
+    buttons.forEach(button => {
+        if(button.style.backgroundColor === 'orange') {
+            button.disabled = false;
+        }
+        
+    });
+
 });
 
 startBtn.addEventListener("click", () => {
     startNewGame();
+    henryBtn.disabled = false;
 });
 
 
@@ -220,30 +238,63 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         for (let i = 0; i < n; i++) {
 
+
             if (button === buttonPadArray[i]) {
                 soundsArray[i].play();
 
-
                 if (soundsArray[i].src === henrySound.src) {
+
                     console.log('Correct');
-                    button.style.backgroundColor = 'red';                  
+                    button.style.backgroundColor = 'red';
                     button.disabled = true;
-                    henrySound.src = clipArray[i];
 
 
+                    
+                    henrySound.src = henrySoundsArray[henryIncrementor];
+                    henryIncrementor = henryIncrementor + 1;
+                    if (henryIncrementor===17) {
+                        playersTurn.innerHTML = "GAME OVER";
+                    }
+
+                    console.log(henryIncrementor);
+                    
                 } else {
-                    console.log('Incorrect');
+                    // console.log('Incorrect');
+                    
+
+
+
+
+                    henryBtn.addEventListener("click", () => {
+
+
+                    });
+
+
+
                 }
             }
+
+
+
         };
 
 
 
-    });
-});
 
-console.log(henrySound.src);
-// console.log(randomNumberArray);
+    });
+
+
+
+
+});
+console.log(henryIncrementor);
+
+const demo = document.getElementById('demo');
+demo.innerHTML = randomNumberArray;
+
+// console.log(henrySound);
+// // console.log(randomNumberArray);
 // console.log(henrySoundsArray);
 
 

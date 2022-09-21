@@ -177,3 +177,21 @@
         //                 // console.log("none");
         //             }
         //         }
+
+
+
+
+
+
+        // function startNewGame() {
+        //         randomNumberArray = [];
+        //         henrySoundsArray = [];
+            
+        //         getRandomNumberArray();
+        //         setButtonPad();
+        //         getHenrySoundArray();
+        //         setHenryButton();
+            
+        //         playersTurn.innerHTML = `Player 1's Turn`;
+            
+        //     }
