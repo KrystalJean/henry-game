@@ -277,6 +277,7 @@ buttons.forEach(button => {
                     henryIncrementor = henryIncrementor + 1;
                     if (henryIncrementor === 17) {
                         instruction.innerHTML = "GAME OVER";
+                        playerIndicator.innerHTML = playerIndicator.innerHTML + " Wins!"
                         henryBtn.disabled = true;
                     }
 
