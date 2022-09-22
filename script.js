@@ -209,6 +209,7 @@ function startNewGame() {
     playersTurn.innerHTML = `Player 1's Turn`;
 
 }
+henryBtn.disabled = true;
 
 startNewGame();
 
@@ -247,7 +248,9 @@ buttons.forEach(button => {
                     console.log('Correct');
                     button.style.backgroundColor = 'red';
                     button.disabled = true;
-
+                    buttons.forEach(button => {
+                        button.disabled = true;
+                    });
 
                     
                     henrySound.src = henrySoundsArray[henryIncrementor];
@@ -260,7 +263,12 @@ buttons.forEach(button => {
                     
                 } else {
                     // console.log('Incorrect');
-                    
+
+                    buttons.forEach(button => {
+                        button.disabled = true;
+                    });
+
+                   
 
 
 
@@ -288,14 +296,3 @@ buttons.forEach(button => {
 
 
 });
-console.log(henryIncrementor);
-
-const demo = document.getElementById('demo');
-demo.innerHTML = randomNumberArray;
-
-// console.log(henrySound);
-// // console.log(randomNumberArray);
-// console.log(henrySoundsArray);
-
-
-
