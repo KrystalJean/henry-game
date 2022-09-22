@@ -62,7 +62,8 @@ const buttons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-new-game');
 let henrySound = document.getElementById('henry-sound');
-const playersTurn = document.getElementById('player-indicator');
+const playerIndicator = document.getElementById('player-indicator');
+const instruction = document.getElementById('instuction-guide');
 
 
 
@@ -135,52 +136,52 @@ function setHenryButton() {
 
         if (henrySoundsArray[i] === 1) {
             henrySoundsArray[i] = clip1;
-            
+
         } else if (henrySoundsArray[i] === 2) {
             henrySoundsArray[i] = clip2;
-            
+
         } else if (henrySoundsArray[i] === 3) {
             henrySoundsArray[i] = clip3;
-            
+
         } else if (henrySoundsArray[i] === 4) {
             henrySoundsArray[i] = clip4;
-            
+
         } else if (henrySoundsArray[i] === 5) {
             henrySoundsArray[i] = clip5;
-            
+
         } else if (henrySoundsArray[i] === 6) {
             henrySoundsArray[i] = clip6;
-            
+
         } else if (henrySoundsArray[i] === 7) {
             henrySoundsArray[i] = clip7;
-            
+
         } else if (henrySoundsArray[i] === 8) {
             henrySoundsArray[i] = clip8;
-            
+
         } else if (henrySoundsArray[i] === 9) {
             henrySoundsArray[i] = clip9;
-            
+
         } else if (henrySoundsArray[i] === 10) {
             henrySoundsArray[i] = clip10;
-            
+
         } else if (henrySoundsArray[i] === 11) {
             henrySoundsArray[i] = clip11;
-            
+
         } else if (henrySoundsArray[i] === 12) {
             henrySoundsArray[i] = clip12;
-            
+
         } else if (henrySoundsArray[i] === 13) {
             henrySoundsArray[i] = clip13;
-            
+
         } else if (henrySoundsArray[i] === 14) {
             henrySoundsArray[i] = clip14;
-            
+
         } else if (henrySoundsArray[i] === 15) {
             henrySoundsArray[i] = clip15;
-            
+
         } else if (henrySoundsArray[i] === 16) {
             henrySoundsArray[i] = clip16;
-            
+
         } else {
             console.log("none");
         }
@@ -191,10 +192,33 @@ function setHenryButton() {
 
 }
 
+function disableButtonPad() {
+    //Disables each button on the button pad for use after making guess
+    //Feature is to keep 1 player from quickly making multiple guesses
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+}
+
+function togglePlayerIndicator() {
+
+    if (playerIndicator.innerHTML === 'Player 1') {
+        playerIndicator.innerHTML = 'Player 2';
+    } else if (playerIndicator.innerHTML === 'Player 2') {
+        playerIndicator.innerHTML = 'Player 1';
+    } else {
+        console.log('Neither');
+    }
+
+
+}
+
 function startNewGame() {
     randomNumberArray = [];
     henrySoundsArray = [];
     henryIncrementor = 1;
+    playerIndicator.innerHTML = 'Player 1';
+    instruction.innerHTML = 'Press Start Button';
 
     getRandomNumberArray();
     setButtonPad();
@@ -206,93 +230,65 @@ function startNewGame() {
         button.disabled = true;
     });
 
-    playersTurn.innerHTML = `Player 1's Turn`;
+
 
 }
+
+
+// ⬇️ BUILD GAME STARTS HERE ⬇️
 henryBtn.disabled = true;
 
 startNewGame();
 
-////////////////////////////////////////////////////////////////////////////
 
-
+// ⬇️ EVENT LISTENERS START HERE ⬇️
 henryBtn.addEventListener("click", () => {
     henrySound.play();
     buttons.forEach(button => {
-        if(button.style.backgroundColor === 'orange') {
+        if (button.style.backgroundColor === 'orange') {
             button.disabled = false;
         }
-        
     });
-
+    instruction.innerHTML = '... try to find the matching sound.';
 });
 
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
+    instruction.innerHTML = 'Press HENRY to hear a sound,...';
 });
 
-
-
-//button pad event listeners
 buttons.forEach(button => {
+//EVENT LISTENER for each guess button in button pad 
     button.addEventListener("click", () => {
+        instruction.innerHTML = 'Press HENRY to hear a sound,...';
+
         for (let i = 0; i < n; i++) {
-
-
             if (button === buttonPadArray[i]) {
                 soundsArray[i].play();
 
                 if (soundsArray[i].src === henrySound.src) {
-
+                    // CORRECT answers do this
                     console.log('Correct');
                     button.style.backgroundColor = 'red';
                     button.disabled = true;
-                    buttons.forEach(button => {
-                        button.disabled = true;
-                    });
-
-                    
+                    disableButtonPad();
                     henrySound.src = henrySoundsArray[henryIncrementor];
                     henryIncrementor = henryIncrementor + 1;
-                    if (henryIncrementor===17) {
-                        playersTurn.innerHTML = "GAME OVER";
+                    if (henryIncrementor === 17) {
+                        instruction.innerHTML = "GAME OVER";
+                        henryBtn.disabled = true;
                     }
 
-                    console.log(henryIncrementor);
-                    
                 } else {
-                    // console.log('Incorrect');
-
-                    buttons.forEach(button => {
-                        button.disabled = true;
-                    });
-
-                   
-
-
-
-
-                    henryBtn.addEventListener("click", () => {
-
-
-                    });
-
-
-
+                    // INCORRECT answers do this
+                    console.log('Incorrect');
+                    togglePlayerIndicator();
+                    disableButtonPad();
                 }
             }
-
-
-
         };
 
-
-
-
     });
-
-
-
 
 });
