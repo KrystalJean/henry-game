@@ -67,7 +67,8 @@ const instruction = document.getElementById('instuction-guide');
 
 
 
-const n = 16; //number of guess buttons, and length of random numbers array
+const n = clipArray.length;
+console.log(n); //number of guess buttons, and length of random numbers array
 function getRandomNumberArray() {
     do {
         const randomNumber = Math.floor(Math.random() * n) + 1;
