@@ -5,14 +5,30 @@
 }
 
 body {
+    background-image: url(./images/nineties-carpet.webp);
+    background-size: cover;
+    color: aliceblue;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100vh;
     overflow: hidden;
     margin: 0;
+    padding-top: 20px;
+}
+
+#guide-box {
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-bottom: 5px;
+}
+
+#player-indicator {
+    padding-right: 20px;
 }
 
 .game-console {
@@ -27,8 +43,18 @@ body {
 }
 
 #henry-btn {
-    padding: 15px;
+    padding: 5px 20px;
     margin-bottom: 50px;
+    border-radius: 50%;
+    color: #9b3052;
+    text-shadow:
+    -1px -1px 0 #622ea7,  
+     1px -1px 0 #622ea7,
+     -1px 1px 0 #622ea7,
+      1px 1px 0 #622ea7;
+    font: 40px bold;
+    background-color: lightgray;
+    
 }
 
 .button-pad {
@@ -53,6 +79,10 @@ body {
 
 
 #start-new-game {
-    padding: 15px;
+    padding: 18px 50px;
     margin-top: 50px;
+    border-radius: 50%;
+    color: #9b3052;
+    font: 16px bold;
+    background-color: lightgray;
 }

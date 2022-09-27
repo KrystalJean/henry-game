@@ -114,7 +114,7 @@ function startNewGame() {
     henrySoundsArray = [];
     henryIncrementor = 1;
     playerIndicator.innerHTML = 'Player 1';
-    instruction.innerHTML = 'Press Start Button';
+    instruction.innerHTML = ' ( Press Start Button )';
     
     setButtonPad();
     arrayShuffler(clipArray);
@@ -142,20 +142,20 @@ henryBtn.addEventListener("click", () => {
             guessButton.disabled = false;
         }
     });
-    instruction.innerHTML = '... try to find the matching sound.';
+    instruction.innerHTML = ' ( ... try to find the matching sound. )';
 });
 
 //👂START BUTTON
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
-    instruction.innerHTML = 'Press HENRY to hear a sound,...';
+    instruction.innerHTML = ' ( Press HENRY to hear a sound,... )';
 });
 
 //👂BUTTON PAD - (each guess button in button pad)
 guessButtons.forEach(guessButton => {
     guessButton.addEventListener("click", () => {
-        instruction.innerHTML = 'Press HENRY to hear a sound,...';
+        instruction.innerHTML = ' ( Press HENRY to hear a sound,... )';
 
         for (let i = 0; i < numOfClips; i++) {
             if (guessButton === btnPadArray[i]) {
