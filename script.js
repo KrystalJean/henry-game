@@ -1,4 +1,4 @@
-//buttons to click when guessing an answer 
+//guessButtons to click when guessing an answer 
 const btn1 = document.getElementById('guess-btn-1');
 const btn2 = document.getElementById('guess-btn-2');
 const btn3 = document.getElementById('guess-btn-3');
@@ -51,54 +51,49 @@ const clip13 = './audio/tada.mp3';
 const clip14 = './audio/window.mp3';
 const clip15 = './audio/dog.mp3';
 const clip16 = './audio/pig.mp3';
+const clip17 = './audio/trumpet.mp3';
 
 
-const clipArray = [clip1, clip2, clip3, clip4, clip5, clip6, clip7, clip8, clip9, clip10, clip11, clip12, clip13, clip14, clip15, clip16];
+const clipArray = [clip1, clip2, clip3, clip4, clip5, clip6, clip7, clip8, clip9, clip10, clip11, clip12, clip13, clip14, clip15, clip16, clip17];
 const btnPadArray = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16];
 const soundsArray = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12, sound13, sound14, sound15, sound16];
 let henrySoundsArray = [];
 let henryIncrementor = 1;
 let henrySound = document.getElementById('henry-sound');
-const buttons = document.querySelectorAll('.guess-btn');
+const guessButtons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-new-game');
 const playerIndicator = document.getElementById('player-indicator');
 const instruction = document.getElementById('instuction-guide');
 const numOfClips = clipArray.length;
+const numOfGuessBtns = btnPadArray.length;
 
 function setButtonPad() {
-    for (let i = 0; i < 16; i++) {       
+    for (let i = 0; i < numOfGuessBtns; i++) {       
             soundsArray[i].src = clipArray[i];  
+            henrySoundsArray.push(soundsArray[i].src);           
     }
 }
 
-function shuffleClipArray() {
+function arrayShuffler(array) {
     //Fisher-Yates Shuffle Method
-    let currentIndex = numOfClips,  randomIndex;
-  
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      [clipArray[currentIndex], clipArray[randomIndex]] = [
-        clipArray[randomIndex], clipArray[currentIndex]];
-    }
-  
-    return clipArray;
-  }
-   
-function setHenryButton() {
-    for (let i = 0; i < numOfClips; i++) {      
-            henrySoundsArray[i] = clipArray[i];
-        }
+  let currentIndex = array.length,  randomIndex;
 
-    henrySound.src = henrySoundsArray[0];
-}  
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = 
+    [array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
 
 function disableButtonPad() {
     //Disables each button on the button pad after making guess
     //Feature is to keep 1 player from quickly making multiple guesses
-    buttons.forEach(button => {
-        button.disabled = true;
+    guessButtons.forEach(guessButton => {
+        guessButton.disabled = true;
     });
 }
 
@@ -122,12 +117,13 @@ function startNewGame() {
     instruction.innerHTML = 'Press Start Button';
     
     setButtonPad();
-    shuffleClipArray(clipArray);
-    setHenryButton();
+    arrayShuffler(clipArray);
+    arrayShuffler(henrySoundsArray);
+    henrySound.src = henrySoundsArray[0];
 
-    buttons.forEach(button => {
-        button.style.backgroundColor = 'orange';
-        button.disabled = true;
+    guessButtons.forEach(guessButton => {
+        guessButton.style.backgroundColor = 'orange';
+        guessButton.disabled = true;
     });
 
 }
@@ -141,9 +137,9 @@ startNewGame();
 //👂 HENRY BUTTON
 henryBtn.addEventListener("click", () => {
     henrySound.play();
-    buttons.forEach(button => {
-        if (button.style.backgroundColor === 'orange') {
-            button.disabled = false;
+    guessButtons.forEach(guessButton => {
+        if (guessButton.style.backgroundColor === 'orange') {
+            guessButton.disabled = false;
         }
     });
     instruction.innerHTML = '... try to find the matching sound.';
@@ -157,19 +153,19 @@ startBtn.addEventListener("click", () => {
 });
 
 //👂BUTTON PAD - (each guess button in button pad)
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
+guessButtons.forEach(guessButton => {
+    guessButton.addEventListener("click", () => {
         instruction.innerHTML = 'Press HENRY to hear a sound,...';
 
         for (let i = 0; i < numOfClips; i++) {
-            if (button === btnPadArray[i]) {
+            if (guessButton === btnPadArray[i]) {
                 soundsArray[i].play();
 
                 if (soundsArray[i].src === henrySound.src) {
                     // CORRECT answers do this
                     console.log('Correct');
-                    button.style.backgroundColor = 'red';
-                    button.disabled = true;
+                    guessButton.style.backgroundColor = 'red';
+                    guessButton.disabled = true;
                     disableButtonPad();
                     henrySound.src = henrySoundsArray[henryIncrementor];
                     henryIncrementor = henryIncrementor + 1;
