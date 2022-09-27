@@ -1,3 +1,13 @@
+
+ 
+        //     let incrementor = 0;
+        //     while (balance > 0) {
+        //       counter ++; 
+        //       if (counter%12==0)
+        //           console.log("You are on a (N*12)th loop run");  
+        //       }
+ 
+ 
  // switch (randomNumberArray[i]) {
         //     case 1: soundClip = clip1;
         //         break;
