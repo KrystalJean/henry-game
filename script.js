@@ -130,11 +130,6 @@ function startNewGame() {
         button.disabled = true;
     });
 
-
-
-console.log(clipArray);
-console.log(henrySoundsArray);
-
 }
 
 
