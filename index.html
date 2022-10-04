@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1 style="background-color: black;">HENRY |electronic gaming|</h1>
+    <!-- <h1 style="background-color: black;">HENRY |electronic gaming|</h1> -->
     <div id="guide-box">
         <p id="player-indicator"></p>
         <p id="instuction-guide"></p>
@@ -76,6 +76,51 @@
             <button id="guess-btn-16" class="guess-btn">
                 <audio id="sound-16" class="sound" src=""></audio>
             </button>
+
+        </div>
+
+        <div class="switch-wrapper">
+
+            <div class="game-mode-toggle-wrapper">
+
+                <div class='toggle-text'>
+                    <p>SINGLE</p>
+                    <p>MULTI</p>
+                    <p>PRACTICE</p>
+                </div>
+
+                <div class="switch-toggle" id="game-mode-toggle">
+                    <input id="single" name="game-mode-select" type="radio" checked="" />
+                    <label for="single" onclick="">1</label>
+
+                    <input id="multi" name="game-mode-select" type="radio" />
+                    <label for="multi" onclick="">2</label>
+
+                    <input id="practice" name="game-mode-select" type="radio" checked="checked" />
+                    <label for="practice" class="disabled" onclick="">3</label>
+                </div>
+
+            </div>
+
+            <div class="on-off-toggle-wrapper">
+
+                <div class='toggle-text'>
+                    <p>OFF</p>
+                    <p>ON</p>
+                </div>
+
+                <div class="switch-toggle" id="on-off-toggle">
+
+                    <input id="off" name="on-off-switch" type="radio" checked="checked" />
+                    <label for="off" onclick="">1</label>
+
+                    <input id="on" name="on-off-switch" type="radio" checked="" />
+                    <label for="on" onclick="">2</label>
+
+                    
+                </div>
+
+            </div>
 
         </div>
 

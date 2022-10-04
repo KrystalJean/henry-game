@@ -44,17 +44,17 @@ body {
 
 #henry-btn {
     padding: 5px 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-radius: 50%;
+    border: solid rgb(36, 36, 36) 2px;
     color: #9b3052;
     text-shadow:
-    -1px -1px 0 #622ea7,  
-     1px -1px 0 #622ea7,
-     -1px 1px 0 #622ea7,
-      1px 1px 0 #622ea7;
+        -1px -1px 0 #622ea7,
+        1px -1px 0 #622ea7,
+        -1px 1px 0 #622ea7,
+        1px 1px 0 #622ea7;
     font: 40px bold;
     background-color: lightgray;
-    
 }
 
 .button-pad {
@@ -64,10 +64,10 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 16px;
+    grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 20px;
-    
+
 }
 
 .guess-btn {
@@ -80,9 +80,131 @@ body {
 
 #start-new-game {
     padding: 18px 50px;
-    margin-top: 50px;
+    margin-top: 12px;
     border-radius: 50%;
     color: #9b3052;
     font: 16px bold;
     background-color: lightgray;
+}
+
+
+
+
+/* Toggle Switches */
+
+.switch-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.switch-toggle {
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(64, 156, 214);
+    border-radius: 50px;
+    width: 90px;
+    height: 20px;
+
+}
+
+.switch-toggle input {
+    position: absolute;
+    display: none;
+    width: 30%;
+}
+
+.switch-toggle input+label {
+    padding: 10px;
+    float: left;
+    color: black;
+    cursor: pointer;
+}
+
+.switch-toggle input:checked+label {
+    background: rgb(109, 203, 247);
+    border-radius: 50px;
+    width: 30px;
+    height: 20px;
+}
+
+.toggle-text {
+    width: 90px;
+    display: flex;
+    padding-left: 10px;
+    justify-content: center;
+}
+
+.toggle-text p {
+    width: 100%;
+    font-size: 12px;
+    color: yellow;
+    padding: 0px 5px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .game-console {
+        width: 92%;
+        height: 500px;
+    }
+
+    .button-pad {
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .guess-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .switch-toggle {
+        width: 90px;
+    }
+
+    .switch-toggle input:checked+label {
+        width: 40px;
+    }
+
+    .switch-wrapper {
+        justify-content: center;
+        
+    }
+
+    .on-off-toggle-wrapper {
+        margin-left: 27px;
+    }
+
+    .on-off-toggle-wrapper .toggle-text p {
+        margin: 8px 6px;
+    }
+    
+    .game-mode-toggle-wrapper .toggle-text p {
+        margin: 8px 0px;
+    }
+
+    .toggle-text p {
+        font-size: 10px;
+    }
+
+    #henry-btn {
+        padding: 5px 20px;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        color: #9b3052;
+        text-shadow: none;
+        font: 28px bold;
+        background-color: lightgray;
+    }
+
+    #start-new-game {
+        padding: 12px 40px;
+        border-radius: 50%;
+        color: #9b3052;
+        font: 12px bold;
+        background-color: lightgray;
+    }
+
 }
