@@ -31,7 +31,7 @@ body {
     padding-right: 20px;
 }
 
-.game-console {
+#game-console {
     background-color: blue;
     width: 600px;
     height: 600px;
@@ -57,7 +57,7 @@ body {
     background-color: lightgray;
 }
 
-.button-pad {
+#button-pad {
     background-color: mediumblue;
     border: solid darkblue 6px;
     border-radius: 30px;
