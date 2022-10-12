@@ -149,7 +149,7 @@ henryBtn.addEventListener("click", () => {
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
-    instruction.innerHTML = ' ( Press HENRY to hear a sound,... )';
+    instruction.innerHTML = ' ( Press HENRY to hear a sound, ... )';
 });
 
 //👂BUTTON PAD - (each guess button in button pad)

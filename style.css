@@ -5,9 +5,9 @@
 }
 
 body {
-    background-image: url(./images/nineties-carpet.webp);
+    background-image: url('./images/nineties-carpet.webp');
     background-size: cover;
-    color: aliceblue;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ body {
 }
 
 #guide-box {
-    background-color: black;
+    background-color: #000;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
