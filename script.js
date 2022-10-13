@@ -69,24 +69,24 @@ const numOfClips = clipArray.length;
 const numOfGuessBtns = btnPadArray.length;
 
 function setButtonPad() {
-    for (let i = 0; i < numOfGuessBtns; i++) {       
-            soundsArray[i].src = clipArray[i];  
-            henrySoundsArray.push(soundsArray[i].src);           
+    for (let i = 0; i < numOfGuessBtns; i++) {
+        soundsArray[i].src = clipArray[i];
+        henrySoundsArray.push(soundsArray[i].src);
     }
 }
 
 function arrayShuffler(array) {
     //Fisher-Yates Shuffle Method
-  let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
 
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = 
-    [array[randomIndex], array[currentIndex]];
-  }
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] =
+            [array[randomIndex], array[currentIndex]];
+    }
 
-  return array;
+    return array;
 }
 
 function disableButtonPad() {
@@ -115,7 +115,7 @@ function startNewGame() {
     henryIncrementor = 1;
     playerIndicator.innerHTML = 'Player 1';
     instruction.innerHTML = ' ( Press Start Button )';
-    
+
     setButtonPad();
     arrayShuffler(clipArray);
     arrayShuffler(henrySoundsArray);
@@ -134,7 +134,9 @@ henryBtn.disabled = true;
 
 startNewGame();
 
-//👂 HENRY BUTTON
+// ⬇️ EVENT LISTENERS START HERE ⬇️ 
+
+//👂 henry button
 henryBtn.addEventListener("click", () => {
     henrySound.play();
     guessButtons.forEach(guessButton => {
@@ -145,14 +147,14 @@ henryBtn.addEventListener("click", () => {
     instruction.innerHTML = ' ( ... try to find the matching sound. )';
 });
 
-//👂START BUTTON
+//👂start button
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
     instruction.innerHTML = ' ( Press HENRY to hear a sound, ... )';
 });
 
-//👂BUTTON PAD - (each guess button in button pad)
+//👂each guess button in button pad
 guessButtons.forEach(guessButton => {
     guessButton.addEventListener("click", () => {
         instruction.innerHTML = ' ( Press HENRY to hear a sound,... )';
@@ -187,3 +189,19 @@ guessButtons.forEach(guessButton => {
     });
 
 });
+
+// ⬇️ THEMES START HERE ⬇️ 
+
+const guideBox = document.getElementById('guide-box');
+const gameConsole = document.getElementById('game-console');
+
+function themeChanger() {
+    const testTheme = document.getElementById('test-checkbox');
+    if (testTheme.checked) {
+        guideBox.classList.add('test');
+        gameConsole.classList.add('test');
+    } else {
+        guideBox.classList.remove('test');
+        gameConsole.classList.remove('test');
+    }
+}

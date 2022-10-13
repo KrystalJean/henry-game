@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+:root {
+    --guide-box-bg-color: #000;
+    --game-console-bg-color: blue;
+}
+
+
+.test {
+    --guide-box-bg-color: #fff;
+    --game-console-bg-color: purple;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -18,8 +30,18 @@ body {
     padding-top: 20px;
 }
 
+.wrapper {
+    display: flex;
+}
+
+.theme-menu {
+    background-color: red;
+    justify-content: center;
+    text-align: center;
+}
+
 #guide-box {
-    background-color: #000;
+    background-color: var(--guide-box-bg-color);
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -32,7 +54,7 @@ body {
 }
 
 #game-console {
-    background-color: blue;
+    background-color: var(--game-console-bg-color);
     width: 600px;
     height: 600px;
     display: flex;
