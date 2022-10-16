@@ -21,6 +21,7 @@ If you want to get a better look of the game in action, this will show you a vid
   
 **I am looking for some help with the design of the game using CSS.**
 
+This is the current game progress: (When you make design changes, take a screenshot and replace this image with it.)
 ![henry-screenshot](https://user-images.githubusercontent.com/44277065/195959780-e2a39641-3dc2-41d4-83b1-695cc184fd18.png)
 
 ## Licensing
@@ -36,13 +37,18 @@ If you want to get a better look of the game in action, this will show you a vid
    > Remember:
    > **"Hacktoberfest is about contributing meaningfully to open-source projects."
    > Pull request to only remove whitespace, or only change font-size from 16px to 17px will be marked as spam.**
+   
+   
+Please, use clean code, and descriptive names.  Here is what I refer to things as to help you navigate:
+![henry-label-names](https://user-images.githubusercontent.com/44277065/196012686-d482fc49-faec-4c0e-8296-54ad1e11a313.png)
+
 
    
 1. If you see an issue that you would like to contribute to, please, ask to be assigned to the issue, so that we can avoid two people working on the same thing, at the same time.
 
 2. It is perfectly fine if you decide that you no longer want to be assigned to an issue, just let me know in a timely manner, so that I can assign the issue to someone else.
 
-3. When you submit a pull request that changes the look of the game, please take a screenshot, and update the README.md file by replacing the old "Progress of the Game" picture with the new screenshot.  This should be included in the same pull request.
+3. When you submit a pull request that changes the look of the game, please take a screenshot, and update the README.md (this file) by replacing the old "Progress of the Game" picture with the new screenshot.  This should be included in the same pull request, as the other changes you made.
 
 4. Have a good time.
  
