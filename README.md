@@ -22,7 +22,7 @@ If you want to get a better look of the game in action, this will show you a vid
 **I am looking for some help with the design of the game using CSS.**
 
 This is the current game progress: (When you make design changes, take a screenshot and replace this image with it.)
-![henry-screenshot](https://user-images.githubusercontent.com/44277065/195959780-e2a39641-3dc2-41d4-83b1-695cc184fd18.png)
+![henry-screenshot](https://user-images.githubusercontent.com/83706503/196282240-fe9c68c9-c8ea-4e39-9213-40fd5740c4ec.png)
 
 ## Licensing
 

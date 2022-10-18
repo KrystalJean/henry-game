@@ -21,7 +21,8 @@
     --switch-toggle-input-color: black;
     --switch-toggle-input-checked-color: rgb(109, 203, 247);
     --toggle-text-color: yellow;
-    
+    --led-color: rgb(122, 0, 0);
+    --led-hover-color: rgb(255, 5, 5);
 }
 body {
     background-image: url('./images/nineties-carpet.webp');
@@ -63,7 +64,8 @@ body {
 
 #henry-btn {
     padding: 5px 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 12px;
     border-radius: 50%;
     border: solid var(--henry-btn-border-color) 2px;
     color: var(--henry-btn-color);
@@ -75,7 +77,25 @@ body {
     font: 40px bold;
     background-color: var(--henry-btn-bg-color);
 }
-
+.row-bar{
+    display: flex;
+    margin-bottom: 6px;
+}
+#led{
+    width: 30px;
+    height: 30px;
+    background: var(--led-color);
+    border-radius: 50%;
+    position: relative;
+    margin-left: 150px;
+    margin-right: 50px;
+}
+#led:hover{
+    background-color: var(--led-hover-color);
+}
+#logo{
+    position: relative;
+}
 #button-pad {
     background-color: var(--btn-pad-bg-color);
     border: solid var(--btn-pad-border-color) 6px;
