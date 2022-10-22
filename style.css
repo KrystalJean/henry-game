@@ -1,25 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-:root {
-    --guide-box-bg-color: #000;
-    --game-console-bg-color: blue;
-}
-
-
-.test {
-    --guide-box-bg-color: #fff;
-    --game-console-bg-color: purple;
-}
-
-
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --body-color: #fff;
+    --guide-box-bg-color: #000;
+    --game-console-bf-color: blue;
+    --henry-btn-border-color: rgb(36, 36, 36);
+    --henry-btn-color: #9b3052;
+    --henry-btn-shadow: #622ea7;
+    --henry-btn-bg-color: lightgray;
+    --btn-pad-bg-color: mediumblue;
+    --btn-pad-border-color: darkblue;
+    --guess-btn-bg-color: orange;
+    --start-game-color: #9b3052;
+    --start-game-bg-color: lightgray;
+    --switch-toggle-bg-color: rgb(64, 156, 214);
+    --switch-toggle-input-color: black;
+    --switch-toggle-input-checked-color: rgb(109, 203, 247);
+    --toggle-text-color: yellow;
+    --led-color: rgb(122, 0, 0);
+    --led-hover-color: rgb(255, 5, 5);
+}
 body {
     background-image: url('./images/nineties-carpet.webp');
     background-size: cover;
-    color: #fff;
+    color: var(--body-color);
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -54,7 +62,7 @@ body {
 }
 
 #game-console {
-    background-color: var(--game-console-bg-color);
+    background-color: var(--game-console-bf-color);
     width: 600px;
     height: 600px;
     display: flex;
@@ -66,22 +74,41 @@ body {
 
 #henry-btn {
     padding: 5px 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 12px;
     border-radius: 50%;
-    border: solid rgb(36, 36, 36) 2px;
-    color: #9b3052;
+    border: solid var(--henry-btn-border-color) 2px;
+    color: var(--henry-btn-color);
     text-shadow:
-        -1px -1px 0 #622ea7,
-        1px -1px 0 #622ea7,
-        -1px 1px 0 #622ea7,
-        1px 1px 0 #622ea7;
+        -1px -1px 0 var(--henry-btn-shadow),
+        1px -1px 0 var(--henry-btn-shadow),
+        -1px 1px 0 var(--henry-btn-shadow),
+        1px 1px 0 var(--henry-btn-shadow);
     font: 40px bold;
-    background-color: lightgray;
+    background-color: var(--henry-btn-bg-color);
 }
-
+.row-bar{
+    display: flex;
+    margin-bottom: 6px;
+}
+#led{
+    width: 30px;
+    height: 30px;
+    background: var(--led-color);
+    border-radius: 50%;
+    position: relative;
+    margin-left: 150px;
+    margin-right: 50px;
+}
+#led:hover{
+    background-color: var(--led-hover-color);
+}
+#logo{
+    position: relative;
+}
 #button-pad {
-    background-color: mediumblue;
-    border: solid darkblue 6px;
+    background-color: var(--btn-pad-bg-color);
+    border: solid var(--btn-pad-border-color) 6px;
     border-radius: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,7 +120,7 @@ body {
 }
 
 .guess-btn {
-    background-color: orange;
+    background-color: var(--guess-btn-bg-color);
     width: 60px;
     height: 60px;
     border-radius: 10px;
@@ -104,9 +131,9 @@ body {
     padding: 18px 50px;
     margin-top: 12px;
     border-radius: 50%;
-    color: #9b3052;
+    color: var(--start-game-color);
     font: 16px bold;
-    background-color: lightgray;
+    background-color: var(--start-game-bg-color);
 }
 
 
@@ -124,7 +151,7 @@ body {
 .switch-toggle {
     display: flex;
     justify-content: space-evenly;
-    background: rgb(64, 156, 214);
+    background: var(--switch-toggle-bg-color);
     border-radius: 50px;
     width: 90px;
     height: 20px;
@@ -140,12 +167,12 @@ body {
 .switch-toggle input+label {
     padding: 10px;
     float: left;
-    color: black;
+    color: var(--switch-toggle-input-color);
     cursor: pointer;
 }
 
 .switch-toggle input:checked+label {
-    background: rgb(109, 203, 247);
+    background: var(--switch-toggle-input-checked-color);
     border-radius: 50px;
     width: 30px;
     height: 20px;
@@ -161,7 +188,7 @@ body {
 .toggle-text p {
     width: 100%;
     font-size: 12px;
-    color: yellow;
+    color: var(--toggle-text-color);
     padding: 0px 5px;
 }
 
@@ -215,18 +242,18 @@ body {
         padding: 5px 20px;
         margin-bottom: 30px;
         border-radius: 50%;
-        color: #9b3052;
+        color: var(--henry-btn-color);
         text-shadow: none;
         font: 28px bold;
-        background-color: lightgray;
+        background-color: var(--henry-btn-bg-color);
     }
 
     #start-new-game {
         padding: 12px 40px;
         border-radius: 50%;
-        color: #9b3052;
+        color: var(--start-game-color);
         font: 12px bold;
-        background-color: lightgray;
+        background-color: var(--start-game-bg-color);
     }
 
 }
