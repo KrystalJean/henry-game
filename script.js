@@ -52,6 +52,7 @@ const clip14 = './audio/window.mp3';
 const clip15 = './audio/dog.mp3';
 const clip16 = './audio/pig.mp3';
 const clip17 = './audio/trumpet.mp3';
+const color = getEle
 
 
 const clipArray = [clip1, clip2, clip3, clip4, clip5, clip6, clip7, clip8, clip9, clip10, clip11, clip12, clip13, clip14, clip15, clip16, clip17];
@@ -67,6 +68,7 @@ const playerIndicator = document.getElementById('player-indicator');
 const instruction = document.getElementById('instuction-guide');
 const numOfClips = clipArray.length;
 const numOfGuessBtns = btnPadArray.length;
+
 
 function setButtonPad() {
     for (let i = 0; i < numOfGuessBtns; i++) {
@@ -190,18 +192,3 @@ guessButtons.forEach(guessButton => {
 
 });
 
-// ⬇️ THEMES START HERE ⬇️ 
-
-const guideBox = document.getElementById('guide-box');
-const gameConsole = document.getElementById('game-console');
-
-function themeChanger() {
-    const testTheme = document.getElementById('test-checkbox');
-    if (testTheme.checked) {
-        guideBox.classList.add('test');
-        gameConsole.classList.add('test');
-    } else {
-        guideBox.classList.remove('test');
-        gameConsole.classList.remove('test');
-    }
-}
