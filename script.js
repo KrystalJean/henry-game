@@ -191,3 +191,23 @@ guessButtons.forEach(guessButton => {
 
 });
 
+// ⬇️ THEMES START HERE ⬇️ 
+
+// elements to change
+const guideBox = document.getElementById('guide-box');
+const gameConsole = document.getElementById('game-console');
+
+//theme names
+    const themeOne = document.getElementById('theme-1');
+    const themeTwo = document.getElementById('theme-2');
+
+//theme event listeners
+themeOne.addEventListener("click", () => {
+        guideBox.className = 'test';
+        gameConsole.className = 'test';
+    })
+    
+themeTwo.addEventListener("click", () => {
+    guideBox.className = 'test2';
+    gameConsole.className = 'test2';
+    })

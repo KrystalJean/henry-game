@@ -24,6 +24,18 @@
     --led-color: rgb(122, 0, 0);
     --led-hover-color: rgb(255, 5, 5);
 }
+
+.test {
+    --body-color: #fff;
+    --guide-box-bg-color: rgb(255, 255, 255);
+    --game-console-bf-color: rgb(170, 26, 146);
+}
+.test2 {
+    --body-color: #fff;
+    --guide-box-bg-color: rgb(145, 134, 134);
+    --game-console-bf-color: rgb(26, 170, 45);
+}
+
 body {
     background-image: url('./images/nineties-carpet.webp');
     background-size: cover;
@@ -46,6 +58,9 @@ body {
     background-color: red;
     justify-content: center;
     text-align: center;
+    padding: 5px;
+    width: 150px;
+    flex-direction: column;
 }
 
 #guide-box {
