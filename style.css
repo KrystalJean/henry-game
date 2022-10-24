@@ -134,14 +134,10 @@ body {
 
 
 #start-new-game {
-    padding: 18px 50px;
-    margin-top: 12px;
-    border-radius: 50%;
-    color: var(--start-game-color);
-    font: 16px bold;
-    background-color: var(--start-game-bg-color);
+    border: none;
+    background-color: transparent;
 }
-
+#start-new-game img {width: 200px;}
 
 
 
