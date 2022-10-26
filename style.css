@@ -6,14 +6,14 @@
 
 :root {
     --body-color: #fff;
-    --guide-box-bg-color: #000;
-    --game-console-bf-color: blue;
+    --guide-box-bg-color: rgb(0, 0, 0);
+    --game-console-bf-color: rgb(83, 107, 185);
     --henry-btn-border-color: rgb(36, 36, 36);
     --henry-btn-color: #9b3052;
     --henry-btn-shadow: #622ea7;
     --henry-btn-bg-color: lightgray;
-    --btn-pad-bg-color: mediumblue;
-    --btn-pad-border-color: darkblue;
+    --btn-pad-bg-color: rgb(83, 107, 185);
+    --btn-pad-border-color: rgb(70, 93, 165);
     --guess-btn-bg-color: orange;
     --start-game-color: #9b3052;
     --start-game-bg-color: lightgray;
@@ -78,13 +78,14 @@ body {
 
 #game-console {
     background-color: var(--game-console-bf-color);
-    width: 600px;
-    height: 600px;
+    width: 680px;
+    height: 680px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: 20px ;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 #henry-btn {
