@@ -156,7 +156,7 @@ body {
     justify-content: space-evenly;
     background: var(--switch-toggle-bg-color);
     border-radius: 50px;
-    width: 90px;
+    width: 100px;
     height: 20px;
 
 }
@@ -177,7 +177,7 @@ body {
 .switch-toggle input:checked+label {
     background: var(--switch-toggle-input-checked-color);
     border-radius: 50px;
-    width: 30px;
+    width: 50px;
     height: 20px;
 }
 
