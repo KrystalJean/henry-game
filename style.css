@@ -7,7 +7,7 @@
 :root {
     --body-color: #fff;
     --guide-box-bg-color: rgb(0, 0, 0);
-    --game-console-bf-color: rgb(83, 107, 185);
+    --game-console-bg-color: rgb(83, 107, 185);
     --henry-btn-border-color: rgb(36, 36, 36);
     --henry-btn-color: #9b3052;
     --henry-btn-shadow: #622ea7;
@@ -45,40 +45,51 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     overflow: hidden;
     margin: 0;
     padding-top: 20px;
 }
 
-.wrapper {
+.menu-wrapper {
     display: flex;
+    width: 80%;
 }
 
 .theme-menu {
-    background-color: red;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-    width: 150px;
+    background-color: var(--guide-box-bg-color);
+    border-radius: 10px;
+    border: solid 2px rgb(185, 185, 185);
+    text-align: left;
+    padding: 12px;
+    margin-right: 40px;
+    width: auto;
     flex-direction: column;
 }
 
 #guide-box {
     background-color: var(--guide-box-bg-color);
     border-radius: 10px;
+    border: dashed 2px rgb(185, 185, 185);
     display: flex;
     flex-direction: row;
     padding: 0 20px;
-    margin-bottom: 5px;
+    width: 58%;
+    align-items: center;
+    
 }
 
 #player-indicator {
     padding-right: 20px;
 }
 
+#player-indicator::after {
+    content: ':';
+}
+
 #game-console {
-    background-color: var(--game-console-bf-color);
+    background-color: var(--game-console-bg-color);
     width: 680px;
     height: 680px;
     display: flex;
@@ -87,26 +98,29 @@ body {
     justify-content: center;
     border-radius: 20px;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    margin-top: 40px;
 }
 
 #henry-btn {
     background-color: transparent;
     border: none;
+    margin-bottom: 14px;
 }
 
 .row-bar {
     display: flex;
     margin-bottom: 6px;
+    width: 27%;
+    margin-left: 155px;
+    justify-content: space-between;
 }
 
 #led {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: var(--led-color);
+    border: solid 1px #333;
     border-radius: 50%;
-    position: relative;
-    margin-left: 135px;
-    margin-right: 65px;
 }
 
 #led:hover {
@@ -123,7 +137,6 @@ body {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 20px;
-
 }
 
 .guess-btn {
@@ -134,13 +147,15 @@ body {
 }
 
 
-#start-new-game {
+#start-btn {
     border: none;
     background-color: transparent;
+    margin-top: 12px;
 }
 
-#start-new-game img {
+#start-btn img {
     width: 200px;
+    
 }
 
 
@@ -197,34 +212,62 @@ body {
     padding: 0px 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
-    .game-console {
-        width: 92%;
-        height: 500px;
+    #game-console {
+        background-color: var(--game-console-bg-color);
+        width: 480px;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    .button-pad {
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
+    .row-bar {
+        display: flex;
+        margin-bottom: 3px;
+        width: 28%;
+        margin-left: 135px;
+        justify-content: space-between;
+    }
+
+    #led {
+        width: 18px;
+        height: 18px;
+    }
+
+    #logo img {
+        width: 50px;
+    }
+
+    #button-pad {
+        grid-column-gap: 20px;
+        grid-row-gap: 12px;
+        padding: 16px;
     }
 
     .guess-btn {
-        width: 50px;
-        height: 50px;
+        width: 46px;
+        height: 46px;
     }
 
     .switch-toggle {
+        height: 16px;
         width: 90px;
     }
 
+    .switch-toggle input+label {
+        padding: 0;
+    }
+    
     .switch-toggle input:checked+label {
         width: 40px;
+        height: 16px;
     }
 
     .switch-wrapper {
         justify-content: center;
-
     }
 
     .on-off-toggle-wrapper {
@@ -240,25 +283,23 @@ body {
     }
 
     .toggle-text p {
-        font-size: 10px;
+        font-size: 8px;
     }
 
     #henry-btn {
-        padding: 5px 20px;
-        margin-bottom: 30px;
-        border-radius: 50%;
-        color: var(--henry-btn-color);
-        text-shadow: none;
-        font: 28px bold;
-        background-color: var(--henry-btn-bg-color);
+        margin-bottom: 5px;
     }
 
-    #start-new-game {
-        padding: 12px 40px;
-        border-radius: 50%;
-        color: var(--start-game-color);
-        font: 12px bold;
-        background-color: var(--start-game-bg-color);
+    #start-btn {
+        margin-top: 12px;
+    }
+
+    #start-btn img {
+        width: 125px;
+    }
+    
+    #henry-btn img {
+        width: 125px;
     }
 
 }

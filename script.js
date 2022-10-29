@@ -62,7 +62,7 @@ let henryIncrementor = 1;
 let henrySound = document.getElementById('henry-sound');
 const guessButtons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
-const startBtn = document.getElementById('start-new-game');
+const startBtn = document.getElementById('start-btn');
 const playerIndicator = document.getElementById('player-indicator');
 const instruction = document.getElementById('instuction-guide');
 const numOfClips = clipArray.length;
@@ -145,20 +145,20 @@ henryBtn.addEventListener("click", () => {
             guessButton.disabled = false;
         }
     });
-    instruction.innerHTML = ' ( ... try to find the matching sound. )';
+    instruction.innerHTML = ' ( . . . now, try to find the matching sound. )';
 });
 
 //👂start button
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
-    instruction.innerHTML = ' ( Press HENRY to hear a sound, ... )';
+    instruction.innerHTML = ' ( Press HENRY to hear a sound , . . . )';
 });
 
 //👂each guess button in button pad
 guessButtons.forEach(guessButton => {
     guessButton.addEventListener("click", () => {
-        instruction.innerHTML = ' ( Press HENRY to hear a sound,... )';
+        instruction.innerHTML = ' ( Press HENRY to hear a sound , . . . )';
 
         for (let i = 0; i < numOfClips; i++) {
             if (guessButton === btnPadArray[i]) {
