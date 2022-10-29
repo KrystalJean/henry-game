@@ -30,6 +30,7 @@
     --guide-box-bg-color: rgb(255, 255, 255);
     --game-console-bf-color: rgb(170, 26, 146);
 }
+
 .test2 {
     --body-color: #fff;
     --guide-box-bg-color: rgb(145, 134, 134);
@@ -84,35 +85,34 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px ;
+    border-radius: 20px;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 #henry-btn {
     background-color: transparent;
     border: none;
-    margin-top: 10px;
-    margin-bottom: -55px;
 }
-.row-bar{
+
+.row-bar {
     display: flex;
     margin-bottom: 6px;
 }
-#led{
+
+#led {
     width: 30px;
     height: 30px;
     background: var(--led-color);
     border-radius: 50%;
     position: relative;
-    margin-left: 150px;
-    margin-right: 50px;
+    margin-left: 135px;
+    margin-right: 65px;
 }
-#led:hover{
+
+#led:hover {
     background-color: var(--led-hover-color);
 }
-#logo{
-    position: relative;
-}
+
 #button-pad {
     background-color: var(--btn-pad-bg-color);
     border: solid var(--btn-pad-border-color) 6px;
@@ -138,8 +138,10 @@ body {
     border: none;
     background-color: transparent;
 }
-#start-new-game img {width: 200px;}
 
+#start-new-game img {
+    width: 200px;
+}
 
 
 /* Toggle Switches */
@@ -222,7 +224,7 @@ body {
 
     .switch-wrapper {
         justify-content: center;
-        
+
     }
 
     .on-off-toggle-wrapper {
@@ -232,7 +234,7 @@ body {
     .on-off-toggle-wrapper .toggle-text p {
         margin: 8px 6px;
     }
-    
+
     .game-mode-toggle-wrapper .toggle-text p {
         margin: 8px 0px;
     }
