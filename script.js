@@ -35,23 +35,23 @@ const sound15 = document.getElementById('sound-15');
 const sound16 = document.getElementById('sound-16');
 
 //individual sound clip files
-const clip1 = './audio/beep.mp3';
-const clip2 = './audio/cow.mp3';
-const clip3 = './audio/doorbell.mp3';
-const clip4 = './audio/glass.mp3';
-const clip5 = './audio/hawk.mp3';
-const clip6 = './audio/hey.mp3';
-const clip7 = './audio/horse.mp3';
-const clip8 = './audio/kiss.mp3';
-const clip9 = './audio/owl.mp3';
-const clip10 = './audio/phone.mp3';
-const clip11 = './audio/punch.mp3';
-const clip12 = './audio/rooster.mp3';
-const clip13 = './audio/tada.mp3';
-const clip14 = './audio/window.mp3';
-const clip15 = './audio/dog.mp3';
-const clip16 = './audio/pig.mp3';
-const clip17 = './audio/trumpet.mp3';
+let clip1 = './audio/beep.mp3';
+let clip2 = './audio/cow.mp3';
+let clip3 = './audio/doorbell.mp3';
+let clip4 = './audio/glass.mp3';
+let clip5 = './audio/hawk.mp3';
+let clip6 = './audio/hey.mp3';
+let clip7 = './audio/horse.mp3';
+let clip8 = './audio/kiss.mp3';
+let clip9 = './audio/owl.mp3';
+let clip10 = './audio/phone.mp3';
+let clip11 = './audio/punch.mp3';
+let clip12 = './audio/rooster.mp3';
+let clip13 = './audio/tada.mp3';
+let clip14 = './audio/window.mp3';
+let clip15 = './audio/dog.mp3';
+let clip16 = './audio/pig.mp3';
+let clip17 = './audio/trumpet.mp3';
 
 
 const clipArray = [clip1, clip2, clip3, clip4, clip5, clip6, clip7, clip8, clip9, clip10, clip11, clip12, clip13, clip14, clip15, clip16, clip17];
@@ -194,20 +194,69 @@ guessButtons.forEach(guessButton => {
 // ⬇️ THEMES START HERE ⬇️ 
 
 // elements to change
+const body = document.getElementById('body');
+const themeMenu = document.getElementById('theme-menu');
 const guideBox = document.getElementById('guide-box');
 const gameConsole = document.getElementById('game-console');
+const led = document.getElementById('led');
+const buttonPad = document.getElementById('button-pad');
+
+
 
 //theme names
-    const themeOne = document.getElementById('theme-1');
-    const themeTwo = document.getElementById('theme-2');
+const themeOne = document.getElementById('theme-1');
+const themeTwo = document.getElementById('theme-2');
 
-//theme event listeners
+// theme event listeners
 themeOne.addEventListener("click", () => {
-        guideBox.className = 'test';
-        gameConsole.className = 'test';
+    body.className = 'theme-one';
+    themeMenu.className = 'theme-one';
+    guideBox.className = 'theme-one';
+    gameConsole.className = 'theme-one';
+    led.className = 'theme-one';
+    buttonPad.className = 'theme-one';
+    let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-one'))
+        .getPropertyValue('--guess-btn-bg-color');
+
+    guessButtons.forEach(guessButton => {
+        guessButton.style.backgroundColor = guessBtnVarColor;
     })
-    
+
+})
+
 themeTwo.addEventListener("click", () => {
-    guideBox.className = 'test2';
-    gameConsole.className = 'test2';
+
+    body.className = 'theme-two';
+    guideBox.className = 'theme-two';
+    gameConsole.className = 'theme-two';
+    led.className = 'theme-two';
+    buttonPad.className = 'theme-two';
+    let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-two'))
+        .getPropertyValue('--guess-btn-bg-color');
+
+    guessButtons.forEach(guessButton => {
+        guessButton.style.backgroundColor = guessBtnVarColor;
     })
+
+
+
+    clip1 = './audio/Short-meow-sound-effect.mp3';
+    clip2 = './audio/Short-meow-sound-effect.mp3';
+    clip3 = './audio/Short-meow-sound-effect.mp3';
+    clip4 = './audio/Short-meow-sound-effect.mp3';
+    clip5 = './audio/Short-meow-sound-effect.mp3';
+    clip6 = './audio/Short-meow-sound-effect.mp3';
+    clip7 = './audio/Short-meow-sound-effect.mp3';
+    clip8 = './audio/Short-meow-sound-effect.mp3';
+    clip9 = './audio/Short-meow-sound-effect.mp3';
+    clip10 = './audio/Short-meow-sound-effect.mp3';
+    clip11 = './audio/Short-meow-sound-effect.mp3';
+    clip12 = './audio/Short-meow-sound-effect.mp3';
+    clip13 = './audio/Short-meow-sound-effect.mp3';
+    clip14 = './audio/Short-meow-sound-effect.mp3';
+    clip15 = './audio/Short-meow-sound-effect.mp3';
+    clip16 = './audio/Short-meow-sound-effect.mp3';
+    clip17 = './audio/Short-meow-sound-effect.mp3';
+
+
+})
