@@ -39,19 +39,19 @@
 }
 
 .theme-two {
-    --body-color: rgb(34, 51, 206);
-    --theme-menu-bg-color: rgb(21, 61, 28);
-    --guide-box-bg-color: rgb(216, 33, 33);
-    --game-console-bg-color: rgb(41, 202, 82);
+    --body-color: #fff;
+    --theme-menu-bg-color: #000;
+    --guide-box-bg-color: rgb(0, 0, 0);
+    --game-console-bg-color: rgb(83, 107, 185);
     --btn-pad-bg-color: rgb(83, 107, 185);
     --btn-pad-border-color: rgb(70, 93, 165);
-    --guess-btn-bg-color: rgb(197, 45, 172);
-    --switch-toggle-bg-color: rgb(224, 128, 64);
+    --guess-btn-bg-color: orange;
+    --switch-toggle-bg-color: rgb(64, 156, 214);
     --switch-toggle-input-color: black;
     --switch-toggle-input-checked-color: rgb(109, 203, 247);
     --toggle-text-color: yellow;
     --led-color: rgb(122, 0, 0);
-    --led-hover-color: rgb(255, 5, 101);
+    --led-hover-color: rgb(255, 5, 5);
     --body-bg-img: url('./images/nineties-carpet.webp');
 }
 
