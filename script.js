@@ -200,6 +200,7 @@ const guideBox = document.getElementById('guide-box');
 const gameConsole = document.getElementById('game-console');
 const led = document.getElementById('led');
 const buttonPad = document.getElementById('button-pad');
+const switchToggles = document.querySelectorAll('.switch-toggle');
 
 
 
@@ -217,9 +218,16 @@ themeOne.addEventListener("click", () => {
     buttonPad.className = 'theme-one';
     let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-one'))
         .getPropertyValue('--guess-btn-bg-color');
+    
+    let switchToggleVarColor = getComputedStyle(document.querySelector('.theme-one'))
+        .getPropertyValue('--switch-toggle-bg-color');
 
     guessButtons.forEach(guessButton => {
         guessButton.style.backgroundColor = guessBtnVarColor;
+    })
+    
+    switchToggles.forEach(switchToggle => {
+        switchToggle.style.backgroundColor = switchToggleVarColor;
     })
 
 })
@@ -234,29 +242,15 @@ themeTwo.addEventListener("click", () => {
     let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-two'))
         .getPropertyValue('--guess-btn-bg-color');
 
+        let switchToggleVarColor = getComputedStyle(document.querySelector('.theme-two'))
+        .getPropertyValue('--switch-toggle-bg-color');
+
     guessButtons.forEach(guessButton => {
         guessButton.style.backgroundColor = guessBtnVarColor;
     })
 
-
-
-    clip1 = './audio/Short-meow-sound-effect.mp3';
-    clip2 = './audio/Short-meow-sound-effect.mp3';
-    clip3 = './audio/Short-meow-sound-effect.mp3';
-    clip4 = './audio/Short-meow-sound-effect.mp3';
-    clip5 = './audio/Short-meow-sound-effect.mp3';
-    clip6 = './audio/Short-meow-sound-effect.mp3';
-    clip7 = './audio/Short-meow-sound-effect.mp3';
-    clip8 = './audio/Short-meow-sound-effect.mp3';
-    clip9 = './audio/Short-meow-sound-effect.mp3';
-    clip10 = './audio/Short-meow-sound-effect.mp3';
-    clip11 = './audio/Short-meow-sound-effect.mp3';
-    clip12 = './audio/Short-meow-sound-effect.mp3';
-    clip13 = './audio/Short-meow-sound-effect.mp3';
-    clip14 = './audio/Short-meow-sound-effect.mp3';
-    clip15 = './audio/Short-meow-sound-effect.mp3';
-    clip16 = './audio/Short-meow-sound-effect.mp3';
-    clip17 = './audio/Short-meow-sound-effect.mp3';
-
+    switchToggles.forEach(switchToggle => {
+        switchToggle.style.backgroundColor = switchToggleVarColor;
+    })
 
 })
