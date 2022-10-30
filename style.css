@@ -73,6 +73,7 @@ body {
 .menu-wrapper {
     display: flex;
     width: 80%;
+    justify-content: center;
 }
 
 #theme-menu {
@@ -93,9 +94,8 @@ body {
     display: flex;
     flex-direction: row;
     padding: 0 20px;
-    width: 58%;
+    width: 450px;
     align-items: center;
-    
 }
 
 #player-indicator {
@@ -230,6 +230,8 @@ body {
     padding: 0px 5px;
 }
 
+
+
 @media screen and (max-width: 800px) {
 
     body {
@@ -239,12 +241,19 @@ body {
 
     #theme-menu {
         font-size: 14px;
+        min-width: 125px;
     }
    
     #guide-box {
         font-size: 14px;
-        padding: 0 10px;
-        width: 60%;
+        padding: 10px 12px 0px;
+        width: 70%;
+        align-items:flex-start;
+    }
+
+    #player-indicator {
+        width: 110px;
+        padding-right: 10px;
     }
 
     #game-console {
