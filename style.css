@@ -42,17 +42,17 @@
     --body-color: #fff;
     --theme-menu-bg-color: #000;
     --guide-box-bg-color: rgb(0, 0, 0);
-    --game-console-bg-color: rgb(83, 107, 185);
-    --btn-pad-bg-color: rgb(83, 107, 185);
-    --btn-pad-border-color: rgb(70, 93, 165);
+    --game-console-bg-color: rgb(242, 106, 26);
+    --btn-pad-bg-color: rgb(242, 107, 26);
+    --btn-pad-border-color: rgb(0, 0, 0);
     --guess-btn-bg-color: orange;
-    --switch-toggle-bg-color: rgb(64, 156, 214);
-    --switch-toggle-input-color: black;
-    --switch-toggle-input-checked-color: rgb(109, 203, 247);
-    --toggle-text-color: yellow;
+    --switch-toggle-bg-color: rgb(0, 0, 0);
+    --switch-toggle-input-color: rgb(11, 6, 2);
+    --switch-toggle-input-checked-color: rgb(101, 53, 160);
+    --toggle-text-color: rgb(182, 109, 46);
     --led-color: rgb(122, 0, 0);
     --led-hover-color: rgb(255, 5, 5);
-    --body-bg-img: url('./images/nineties-carpet.webp');
+    --body-bg-img: url('./images/halloween-pic.jpg');
 }
 
 body {
