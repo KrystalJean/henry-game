@@ -22,7 +22,9 @@ If you want to get a better look of the game in action, this will show you a vid
 **I am looking for some help with the design of the game using CSS.**
 
 This is the current game progress: (When you make design changes, take a screenshot and replace this image with it.)
-![henry-screenshot](https://user-images.githubusercontent.com/83706503/196282240-fe9c68c9-c8ea-4e39-9213-40fd5740c4ec.png)
+![henry-original](https://user-images.githubusercontent.com/44277065/199050954-ab64b201-879a-460d-b59e-55319aecc42c.png)
+(halloween theme)
+![henry-halloween](https://user-images.githubusercontent.com/44277065/199051090-50153841-552f-415b-9b72-35d6317a52bc.png)
 
 ## Licensing
 
