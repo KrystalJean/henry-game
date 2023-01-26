@@ -21,7 +21,7 @@
     --body-bg-img: url('./images/nineties-carpet.webp');
 }
 
-.theme-one {
+.theme-1 {
     --body-color: #fff;
     --theme-menu-bg-color: #000;
     --guide-box-bg-color: rgb(0, 0, 0);
@@ -38,7 +38,7 @@
     --body-bg-img: url('./images/nineties-carpet.webp');
 }
 
-.theme-two {
+.theme-2 {
     --body-color: #fff;
     --theme-menu-bg-color: #000;
     --guide-box-bg-color: rgb(0, 0, 0);

@@ -1,4 +1,4 @@
-//individual sound clip files
+//individual sound clip files - you may add to this list
 const clipArray = [
     './audio/beep.mp3',
     './audio/cow.mp3',
@@ -17,54 +17,50 @@ const clipArray = [
     './audio/dog.mp3',
     './audio/pig.mp3',
     './audio/trumpet.mp3'
-]
+];
 
 //guessButtons - to click when guessing an answer 
-const btnPadArray = document.querySelectorAll('.guess-btn');
+const guessButtons = document.querySelectorAll('.guess-btn');
 
 //used to access the button audio source attribute's value
 const soundsArray = document.querySelectorAll('.sound');
 
+//used to store soundclips after they have been randomly shuffled
 let henrySoundsArray = [];
-let henryIncrementor = 1;
+
+let henryIncrementor = 1; //setting Globally to allow startNewGame function to reset it
 let henrySound = document.getElementById('henry-sound');
-const guessButtons = document.querySelectorAll('.guess-btn');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-btn');
 const playerIndicator = document.getElementById('player-indicator');
 const instruction = document.getElementById('instuction-guide');
-const numOfClips = clipArray.length;
-const numOfGuessBtns = btnPadArray.length;
 
 
 function setButtonPad() {
-    for (let i = 0; i < numOfGuessBtns; i++) {
+    for (let i = 0; i < guessButtons.length; i++) {
         soundsArray[i].src = clipArray[i];
         henrySoundsArray.push(soundsArray[i].src);
     }
-}
+};
 
 function arrayShuffler(array) {
     //Fisher-Yates Shuffle Method
     let currentIndex = array.length, randomIndex;
-
     while (currentIndex != 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
-        [array[currentIndex], array[randomIndex]] =
-            [array[randomIndex], array[currentIndex]];
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
-
     return array;
-}
+};
 
 function disableButtonPad() {
-    //Disables each button on the button pad after making guess
-    //Feature is to keep 1 player from quickly making multiple guesses
+    //Disables button pad after making a guess (pressing henryBtn enables)
+    //Feature is to keep a player from quickly making multiple guesses out of turn
     guessButtons.forEach(guessButton => {
         guessButton.disabled = true;
     });
-}
+};
 
 function togglePlayerIndicator() {
     //indicates which player's turn it is
@@ -75,16 +71,13 @@ function togglePlayerIndicator() {
     } else {
         console.log('Neither');
     }
-
-
-}
+};
 
 function startNewGame() {
     henrySoundsArray = [];
     henryIncrementor = 1;
     playerIndicator.innerHTML = 'Player 1';
     instruction.innerHTML = ' ( Press Start Button )';
-
     setButtonPad();
     arrayShuffler(clipArray);
     arrayShuffler(henrySoundsArray);
@@ -94,18 +87,16 @@ function startNewGame() {
         guessButton.style.backgroundColor = 'orange';
         guessButton.disabled = true;
     });
-
-}
+};
 
 
 // ⬇️ BUILD GAME STARTS HERE ⬇️ 
 henryBtn.disabled = true;
-
 startNewGame();
 
 // ⬇️ EVENT LISTENERS START HERE ⬇️ 
 
-//👂 henry button
+// 👂 henry button
 henryBtn.addEventListener("click", () => {
     henrySound.play();
     guessButtons.forEach(guessButton => {
@@ -116,20 +107,19 @@ henryBtn.addEventListener("click", () => {
     instruction.innerHTML = ' ( . . . now, try to find the matching sound. )';
 });
 
-//👂start button
+// 👂 start button
 startBtn.addEventListener("click", () => {
     startNewGame();
     henryBtn.disabled = false;
     instruction.innerHTML = ' ( Press HENRY to hear a sound , . . . )';
 });
 
-//👂each guess button in button pad
+// 👂 each guess button in button pad
 guessButtons.forEach(guessButton => {
     guessButton.addEventListener("click", () => {
         instruction.innerHTML = ' ( Press HENRY to hear a sound , . . . )';
-
-        for (let i = 0; i < numOfClips; i++) {
-            if (guessButton === btnPadArray[i]) {
+        for (let i = 0; i < clipArray.length; i++) {
+            if (guessButton === guessButtons[i]) {
                 soundsArray[i].play();
 
                 if (soundsArray[i].src === henrySound.src) {
@@ -140,7 +130,7 @@ guessButtons.forEach(guessButton => {
                     disableButtonPad();
                     henrySound.src = henrySoundsArray[henryIncrementor];
                     henryIncrementor = henryIncrementor + 1;
-                    if (henryIncrementor === 17) {
+                    if (henryIncrementor > guessButtons.length) {
                         instruction.innerHTML = "GAME OVER";
                         playerIndicator.innerHTML = playerIndicator.innerHTML + " Wins!"
                         henryBtn.disabled = true;
@@ -153,10 +143,8 @@ guessButtons.forEach(guessButton => {
                     disableButtonPad();
                 }
             }
-        };
-
+        }
     });
-
 });
 
 // ⬇️ THEMES START HERE ⬇️ 
@@ -170,55 +158,34 @@ const led = document.getElementById('led');
 const buttonPad = document.getElementById('button-pad');
 const switchToggles = document.querySelectorAll('.switch-toggle');
 
-
-
-//theme names
-const themeOne = document.getElementById('theme-1');
-const themeTwo = document.getElementById('theme-2');
+//theme input radio buttons
+const themes = document.querySelectorAll('.themes');
 
 // theme event listeners
-themeOne.addEventListener("click", () => {
-    body.className = 'theme-one';
-    themeMenu.className = 'theme-one';
-    guideBox.className = 'theme-one';
-    gameConsole.className = 'theme-one';
-    led.className = 'theme-one';
-    buttonPad.className = 'theme-one';
-    let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-one'))
-        .getPropertyValue('--guess-btn-bg-color');
+themes.forEach(theme => {
+    theme.addEventListener('click', () => {
+        for (let i = 0; i < themes.length; i++) {
+            if (theme === themes[i]) {
+                body.className = 'theme-' + [i + 1];
+                themeMenu.className = 'theme-' + [i + 1];
+                guideBox.className = 'theme-' + [i + 1];
+                gameConsole.className = 'theme-' + [i + 1];
+                led.className = 'theme-' + [i + 1];
+                buttonPad.className = 'theme-' + [i + 1];
+                let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-' + [i + 1]))
+                    .getPropertyValue('--guess-btn-bg-color');
 
-    let switchToggleVarColor = getComputedStyle(document.querySelector('.theme-one'))
-        .getPropertyValue('--switch-toggle-bg-color');
+                let switchToggleVarColor = getComputedStyle(document.querySelector('.theme-' + [i + 1]))
+                    .getPropertyValue('--switch-toggle-bg-color');
 
-    guessButtons.forEach(guessButton => {
-        guessButton.style.backgroundColor = guessBtnVarColor;
-    })
+                guessButtons.forEach(guessButton => {
+                    guessButton.style.backgroundColor = guessBtnVarColor;
+                });
 
-    switchToggles.forEach(switchToggle => {
-        switchToggle.style.backgroundColor = switchToggleVarColor;
-    })
-
-})
-
-themeTwo.addEventListener("click", () => {
-
-    body.className = 'theme-two';
-    guideBox.className = 'theme-two';
-    gameConsole.className = 'theme-two';
-    led.className = 'theme-two';
-    buttonPad.className = 'theme-two';
-    let guessBtnVarColor = getComputedStyle(document.querySelector('.theme-two'))
-        .getPropertyValue('--guess-btn-bg-color');
-
-    let switchToggleVarColor = getComputedStyle(document.querySelector('.theme-two'))
-        .getPropertyValue('--switch-toggle-bg-color');
-
-    guessButtons.forEach(guessButton => {
-        guessButton.style.backgroundColor = guessBtnVarColor;
-    })
-
-    switchToggles.forEach(switchToggle => {
-        switchToggle.style.backgroundColor = switchToggleVarColor;
-    })
-
-})
+                switchToggles.forEach(switchToggle => {
+                    switchToggle.style.backgroundColor = switchToggleVarColor;
+                });
+            }
+        }
+    });
+});
