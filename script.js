@@ -19,22 +19,15 @@ const clipArray = [
     './audio/trumpet.mp3'
 ];
 
-//guessButtons - to click when guessing an answer 
 const guessButtons = document.querySelectorAll('.guess-btn');
-
-//used to access the button audio source attribute's value
-const soundsArray = document.querySelectorAll('.sound');
-
-//used to store soundclips after they have been randomly shuffled
-let henrySoundsArray = [];
-
-let henryIncrementor = 1; //setting Globally to allow startNewGame function to reset it
+const soundsArray = document.querySelectorAll('.sound');  //access the buttons audio source attribute's value
+let henrySoundsArray = [];  //stores soundclips after randomly shuffled
+let henryIncrementor = 1;   //setting Globally to allow startNewGame() function to reset it
 let henrySound = document.getElementById('henry-sound');
 const henryBtn = document.getElementById('henry-btn');
 const startBtn = document.getElementById('start-btn');
 const playerIndicator = document.getElementById('player-indicator');
 const instruction = document.getElementById('instuction-guide');
-
 
 function setButtonPad() {
     for (let i = 0; i < guessButtons.length; i++) {
@@ -88,7 +81,6 @@ function startNewGame() {
         guessButton.disabled = true;
     });
 };
-
 
 // ⬇️ BUILD GAME STARTS HERE ⬇️ 
 henryBtn.disabled = true;
@@ -158,10 +150,10 @@ const led = document.getElementById('led');
 const buttonPad = document.getElementById('button-pad');
 const switchToggles = document.querySelectorAll('.switch-toggle');
 
-//theme input radio buttons
+// theme input radio buttons
 const themes = document.querySelectorAll('.themes');
 
-// theme event listeners
+// 👂 theme event listener
 themes.forEach(theme => {
     theme.addEventListener('click', () => {
         for (let i = 0; i < themes.length; i++) {
