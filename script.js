@@ -178,6 +178,18 @@ themes.forEach(theme => {
                     switchToggle.style.backgroundColor = switchToggleVarColor;
                 });
             }
+
+            // function stopParticleEffect() {
+            //     // Remove the particle effect canvas element
+            //     var canvas = document.querySelector('#snow > .particles-js-canvas-el');
+            //     canvas.parentNode.removeChild(canvas);
+            //   }
+
+            // if (theme !== themes[2]) {
+            //     radioButton.addEventListener('click', function() {
+            //       stopParticleEffect();
+            //     });
+            //   }
         }
     });
 });
