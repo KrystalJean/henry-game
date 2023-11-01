@@ -53,6 +53,23 @@
     --body-bg-img: url('./images/halloween-pic.jpg');
 }
 
+.theme-3 {
+    --body-color: #fff;
+    --theme-menu-bg-color: #000;
+    --guide-box-bg-color: rgb(0, 0, 0);
+    --game-console-bg-color: rgb(60, 148, 98);
+    --btn-pad-bg-color: rgb(60, 148, 98);
+    --btn-pad-border-color: rgb(45, 117, 76);
+    --guess-btn-bg-color: rgb(255, 47, 0);
+    --switch-toggle-bg-color: rgb(64, 156, 214);
+    --switch-toggle-input-color: black;
+    --switch-toggle-input-checked-color: rgb(109, 203, 247);
+    --toggle-text-color: yellow;
+    --led-color: rgb(122, 0, 0);
+    --led-hover-color: rgb(255, 5, 5);
+    --body-bg-img: url('https://images.unsplash.com/photo-1529973625058-a665431328fb?auto=format&fit=crop&q=60&w=1400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hyaXN0bWFzfGVufDB8fDB8fHww');
+}
+
 body {
     background-image: var(--body-bg-img);
     background-size: cover;
@@ -66,6 +83,16 @@ body {
     overflow: hidden;
     margin: 0;
     padding-top: 20px;
+}
+
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 .menu-wrapper {
